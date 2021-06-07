@@ -1,0 +1,74 @@
+@import "../../../ant-custom.less";
+
+.club-details {
+  width: 100%;
+
+  .spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .club-image {
+    --clip-length: 75px;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--clip-length)) 0,
+      100% var(--clip-length),
+      100% 100%,
+      var(--clip-length) 100%,
+      0 calc(100% - var(--clip-length))
+    );
+  }
+
+  .club-info {
+    text-align: left;
+
+    .club-name {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+
+    .tags {
+      .ant-tag {
+        font-size: 16px;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 5px;
+      }
+    }
+
+    .club-address {
+      b {
+        color: @secondary-color;
+      }
+    }
+
+    .curator-address {
+      b {
+        color: @tertiary-color;
+      }
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: normal;
+    }
+
+    .club-stats {
+      text-align: left;
+
+      h5 {
+        font-size: 20px;
+        color: grey;
+        margin-bottom: 5px;
+      }
+
+      h4 {
+        font-size: 22px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@import "../../../ant-custom.less";
+
+.create-club-view {
+  width: 100%;
+
+  h1 {
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  .form {
+    width: 70vw;
+
+    .club-image {
+      display: flex;
+      justify-content: center;
+      --clip-length: 2vw;
+
+      img,
+      .placeholder {
+        width: 100%;
+        cursor: pointer;
+        clip-path: polygon(
+          0 0,
+          calc(100% - var(--clip-length)) 0,
+          100% var(--clip-length),
+          100% 100%,
+          var(--clip-length) 100%,
+          0 calc(100% - var(--clip-length))
+        );
+      }
+
+      .placeholder {
+        position: relative;
+        padding-top: 100%;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+          background-color: #d3d3d3;
+          color: @primary-color;
+        }
+
+        div {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

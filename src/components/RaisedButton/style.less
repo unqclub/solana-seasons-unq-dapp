@@ -1,0 +1,103 @@
+@import "../../ant-custom.less";
+
+.raised-button {
+  --clip-length: 15px;
+  --transition-duration: 0.3s;
+
+  background: @primary-color;
+  border: none;
+  position: relative;
+  padding: 5px 50px;
+  padding-bottom: 10px;
+  font-weight: 900;
+  font-size: 18px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--clip-length)) 0,
+    100% var(--clip-length),
+    100% 100%,
+    var(--clip-length) 100%,
+    0 calc(100% - var(--clip-length))
+  );
+  cursor: pointer;
+
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-2.5px, -2.5px);
+  transition: transform var(--transition-duration),
+    clip-path var(--transition-duration);
+
+  &.loading {
+    color: transparent;
+    user-select: none;
+    pointer-events: none;
+
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .ant-spin-dot-item {
+        background-color: @tertiary-color;
+      }
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &.loading {
+    transform: translate(2.5px, 2.5px);
+
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--clip-length)) 0,
+      calc(100% - 10px) 7px,
+      calc(100% - 10px) calc(100% - 7px),
+      7px calc(100% - 7px),
+      0 calc(100% - var(--clip-length))
+    );
+
+    &::before {
+      height: 0;
+    }
+
+    &::after {
+      width: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    background: @secondary-color;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 7px;
+    transition: height var(--transition-duration);
+  }
+
+  &::after {
+    content: "";
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7px));
+    display: block;
+    background: @tertiary-color;
+    width: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    transition: width var(--transition-duration);
+  }
+}

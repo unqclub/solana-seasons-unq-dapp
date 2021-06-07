@@ -1,0 +1,58 @@
+.club-item {
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .club-avatar {
+      margin-right: 15px;
+      clip-path: circle();
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+
+  .club-image {
+    --background: none;
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background: var(--background), lightgrey;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    --clip-length: 2vw;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--clip-length)) 0,
+      100% var(--clip-length),
+      100% 100%,
+      var(--clip-length) 100%,
+      0 calc(100% - var(--clip-length))
+    );
+  }
+
+  .club-stats {
+    text-align: left;
+
+    h5 {
+      font-size: 16px;
+      color: lightgrey;
+      margin-bottom: 5px;
+    }
+
+    h4 {
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+  }
+}

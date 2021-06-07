@@ -1,0 +1,44 @@
+@import "../../ant-custom.less";
+
+.outline-button {
+  --clip-length: 7.5px;
+  padding: 2px;
+  background: linear-gradient(118deg, @primary-color 0%, @secondary-color 100%);
+  display: inline-block;
+
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--clip-length)) 0,
+    100% var(--clip-length),
+    100% 100%,
+    var(--clip-length) 100%,
+    0 calc(100% - var(--clip-length))
+  );
+
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    button {
+      background: transparent
+        linear-gradient(118deg, @primary-color 0%, @secondary-color 100%) 0% 0%
+        no-repeat padding-box;
+    }
+  }
+
+  button {
+    border: none;
+    background: white;
+    padding: 5px 30px;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--clip-length)) 0,
+      100% var(--clip-length),
+      100% 100%,
+      var(--clip-length) 100%,
+      0 calc(100% - var(--clip-length))
+    );
+    transition: background 0.3s;
+  }
+}

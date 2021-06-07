@@ -1,0 +1,1050 @@
+.home-page {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  .gradient-underline {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: -2px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: transparent linear-gradient(90deg, #00ffff 0%, #ff00bb 100%) 0% 0% no-repeat
+        padding-box;
+      z-index: 100;
+    }
+  }
+
+  .showcase {
+    position: relative;
+    margin: 50px 0 150px;
+
+    @media (max-width: 768px) {
+      margin: 10px 0 120px;
+    }
+
+    @media (min-width: 1420px) {
+      min-height: 705px;
+    }
+
+    .background-gradient {
+      position: absolute;
+      background: transparent url("./../../assets/pink-orange.svg") center center no-repeat
+        padding-box;
+      filter: blur(50px);
+      width: 580px;
+      height: 360px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+
+      @media (max-width: 768px) {
+        top: 40%;
+        left: 40%;
+        width: 100%;
+      }
+    }
+
+    .showcase-wrapper {
+      padding: 25px 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      
+      @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        padding: 25px;
+      }
+
+      .showcase-description {
+        z-index: 10;
+        text-align: left;
+        max-width: 550px;
+        min-width: 400px;
+
+        @media (max-width: 768px) {
+          margin-top: 50px;
+        }
+
+        @media (max-width: 480px) {
+          min-width: 100%;
+        }
+
+        h1 {
+          font-family: "Teko";
+          color: #000;
+          font-size: 60px;
+          line-height: 60px;
+          font-weight: 700;
+          margin-bottom: 25px;
+        }
+
+        p {
+          color: #000;
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 500;
+        }
+
+        .outline-button {
+          width: fit-content;
+          .button-text {
+            padding: 5px 20px;
+          }
+        }
+      }
+
+      .showcase-image {
+        z-index: 10;
+
+        img {
+          width: 100%;
+          min-width: 400px;
+
+          @media (max-width: 480px) {
+            min-width: 100%;
+          }
+        }
+
+        .artwork {
+          text-align: right;
+          color: rgba(0, 0, 0, 0.2);
+          font-size: 12px;
+          font-weight: 700;
+
+          span {
+            color: #000000;
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .description-section {
+    h2 {
+      font-family: "Teko";
+      color: #000;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 700;
+      margin: 60px auto;
+      max-width: 700px;
+
+      .strikethrough {
+        position: relative;
+        z-index: 1;
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 30px;
+          left: -5px;
+          height: 17px;
+          width: calc(100% + 10px);
+          background-color: #00ffff;
+          z-index: -1;
+        }
+      }
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+
+        &.reverse {
+          flex-direction: column-reverse;
+          margin-bottom: 30px;
+        }
+      }
+
+      .description {
+        text-align: left;
+        flex: 50%;
+        padding: 0 100px;
+
+        &:first-child {
+          padding-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+          flex: 100%;
+        }
+
+        @media (max-width: 480px) {
+          padding: 0 30px;
+        }
+
+        h3 {
+          font-size: 30px;
+          line-height: 28px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: #000;
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 30px;
+          color: #000;
+        }
+
+        ul {
+          list-style: none;
+          margin-bottom: 55px;
+
+          li {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #000;
+
+            &:before {
+              content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+              color: #00ffff; /* Change the color */
+              font-weight: bold; /* If you want it to be bold */
+              display: inline-block; /* Needed to add space between the bullet and the text */
+              width: 1em; /* Also needed for space (tweak if needed) */
+              margin-left: -1em; /* Also needed for space (tweak if needed) */
+            }
+          }
+        }
+
+        .raised-button {
+          color: #000;
+        }
+      }
+
+      .image {
+        flex: 50%;
+
+        @media (max-width: 768px) {
+          flex: 100%;
+          width: 100%;
+          margin-bottom: 50px;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .about {
+    position: relative;
+    margin: 200px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      margin: 100px 0;
+    }
+
+    @media (max-width: 480px) {
+      margin: 80px 0;
+      padding: 0 20px;
+    }
+
+    .background-gradient {
+      position: absolute;
+      background: transparent url("./../../assets/blue-yellow.svg") center center no-repeat
+        padding-box;
+      filter: blur(50px);
+      width: 850px;
+      height: 550px;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      margin: 0;
+      z-index: 1;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    .column {
+      z-index: 10;
+
+      &.left {
+        max-width: 560px;
+        margin-left: 100px;
+
+        @media (max-width: 768px) {
+          margin-left: 0;
+          margin-bottom: 50px;
+        }
+
+        h2 {
+          font-family: "Teko";
+          font-size: 60px;
+          line-height: 60px;
+          font-weight: 700;
+          color: #000;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 500;
+          color: #000;
+          max-width: 400px;
+        }
+      }
+
+      &.right {
+        margin-right: 100px;
+
+        @media (max-width: 768px) {
+          margin-right: 0;
+        }
+
+        .list-item {
+          display: flex;
+          min-height: 56px;
+          margin-bottom: 2em;
+
+          @media (max-width: 768px) {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+          }
+
+          p {
+            width: 340px;
+            color: #000;
+            font-size: 14px;
+            line-height: 28px;
+            font-weight: 500;
+            margin: auto 0;
+
+            @media (max-width: 768px) {
+              width: auto;
+              max-width: 400px;
+            }
+
+            @media (max-width: 480px) {
+              line-height: 18px;
+            }
+          }
+          .outline-button-wrapper {
+            margin-left: 50px;
+
+            @media (max-width: 768px) {
+              margin-left: 0;
+              margin-right: 50px;
+            }
+
+            .outline-button {
+              min-width: 100px;
+              height: 100%;
+              color: #3e00aa;
+              font-size: 16px;
+              padding: 1px;
+              margin: 0;
+              cursor: default;
+
+              &:hover {
+                button {
+                  background: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .clubs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .title {
+      flex: 30%;
+      margin: 0 auto;
+      padding-left: 20px;
+
+      @media (max-width: 768px) {
+        flex: 100%;
+        padding-left: 0;
+      }
+
+      h2 {
+        font-family: "Teko";
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 700;
+        color: #000;
+        width: max-content;
+        margin: 0;
+
+        &.strikethrough {
+          position: relative;
+          z-index: 1;
+
+          &:before {
+            position: absolute;
+            content: "";
+            top: 22px;
+            left: -8px;
+            height: 17px;
+            width: calc(100% + 20px);
+            background-color: #00ffff;
+            z-index: -1;
+          }
+        }
+      }
+
+      h3 {
+        color: #000;
+        font-size: 30px;
+        text-align: left;
+        line-height: 28px;
+      }
+    }
+
+    .club-items {
+      flex: 70%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 20px;
+
+      @media (max-width: 768px) {
+        margin-top: 50px;
+        padding: 0 30px;
+        flex: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+
+      .club-item {
+        flex: 1;
+        color: #000;
+
+        .club-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          @media (max-width: 768px) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          img {
+            margin-right: 5px;
+          }
+
+          h4 {
+            margin: 0;
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+
+        .chips {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          margin-top: 2px;
+          margin-bottom: 10px;
+
+          .chip {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 2px 5px;
+            margin-right: 5px;
+            font-size: 10px;
+            font-weight: 500;
+          }
+
+          .more {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 3px;
+            margin-left: 5px;
+
+            div {
+              height: 3px;
+              width: 3px;
+              background-color: #000000;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .image-wrapper {
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            .image-hover {
+              opacity: 1;
+            }
+          }
+
+          .image {
+            width: 100%;
+          }
+
+          .image-hover {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            position: absolute;
+            top: 8px;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+            backdrop-filter: blur(9px);
+            background-color: rgba(255, 255, 255, 0.2);
+            background-position: center;
+            background-size: 120px;
+            background-repeat: no-repeat;
+
+            --clip-length: 1.2vw;
+            clip-path: polygon(
+              0 0,
+              calc(100% - var(--clip-length)) 0,
+              100% var(--clip-length),
+              100% 100%,
+              var(--clip-length) 100%,
+              0 calc(100% - var(--clip-length))
+            );
+
+            &.image-hover-u {
+              background-image: url(../../assets/U_hover.svg);
+            }
+            &.image-hover-n {
+              background-image: url(../../assets/N_hover.svg);
+            }
+            &.image-hover-q {
+              background-image: url(../../assets/Q_hover.svg);
+            }
+          }
+        }
+
+        .club-stats {
+          margin-top: 15px;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          gap: 30px;
+
+          h5 {
+            margin: 0;
+            color: #dbdbdb;
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          h4 {
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .deals {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 150px 0 50px;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      margin: 100px 0 50px;
+    }
+
+    .deals-list {
+      flex: 70%;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      text-align: left;
+
+      @media (max-width: 768px) {
+        margin-top: 50px;
+        flex: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 30px;
+      }
+
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+
+      .deal-item {
+        flex: 1;
+
+        h3 {
+          color: #000;
+          font-size: 20px;
+          line-height: 28px;
+          font-weight: 500;
+          height: 56px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .image {
+          object-fit: cover;
+          display: block;
+          width: 100%;
+          height: 0;
+          padding-top: 100%;
+          overflow: hidden;
+          margin-bottom: 10px;
+          background-color: lightgrey;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+
+          --clip-length: 1vw;
+          clip-path: polygon(
+            0 0,
+            calc(100% - var(--clip-length)) 0,
+            100% var(--clip-length),
+            100% 100%,
+            var(--clip-length) 100%,
+            0 calc(100% - var(--clip-length))
+          );
+
+          &.dealImg1 {
+            background-image: url(../../assets/HappyMoments.png);
+          }
+          &.dealImg2 {
+            background-image: url(../../assets/DjXexperimental.png);
+          }
+          &.dealImg3 {
+            background-image: url(../../assets/CrusadersGoldRing.png);
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: row;
+          margin-top: 15px;
+
+          h4 {
+            margin-bottom: 2px;
+            color: #dbdbdb;
+            font-size: 14px;
+          }
+
+          span {
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+          }
+
+          .edition {
+            margin-right: 50px;
+          }
+
+          .type {
+            .type-icon {
+              margin-top: 5px;
+              max-width: 24px;
+              max-height: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .title {
+      flex: 30%;
+      margin: 0 auto;
+      padding-left: 100px;
+
+      @media (max-width: 768px) {
+        flex: 100%;
+        padding-left: 0;
+      }
+
+      h2 {
+        font-family: "Teko";
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 700;
+        color: #000;
+        width: max-content;
+        margin: 0;
+
+        &.strikethrough {
+          position: relative;
+          z-index: 1;
+
+          &:before {
+            position: absolute;
+            content: "";
+            top: 22px;
+            left: -8px;
+            height: 17px;
+            width: calc(100% + 20px);
+            background-color: #ff00bb;
+            z-index: -1;
+          }
+        }
+      }
+
+      h3 {
+        color: #000;
+        font-size: 30px;
+        text-align: left;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .blockchain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    background: url(../../assets/blockchain.svg) center center no-repeat;
+    padding: 200px 20px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      margin: 100px 0;
+      padding: 50px 100px;
+      background-position: top center;
+    }
+
+    @media (max-width: 480px) {
+      margin: 50px 0;
+      padding: 50px 30px;
+    }
+
+    h2 {
+      color: #000;
+      font-family: "Teko";
+      font-size: 40px;
+      line-height: 50px;
+      font-weight: 700;
+    }
+
+    p {
+      color: #000;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 500;
+      margin-bottom: 2em;
+    }
+
+    .left-column {
+      max-width: 400px;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+
+      h2 {
+        span {
+          color: #ff00bb;
+        }
+      }
+    }
+    .right-column {
+      max-width: 400px;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+
+      h2 {
+        span {
+          color: #3e00aa;
+        }
+      }
+
+      .raised-button {
+        color: #000;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .subscribe {
+    background: url(../../assets/subscribe.png) center center no-repeat,
+      linear-gradient(to right, rgba(250, 118, 233, 1) 0%, rgba(254, 184, 123, 1) 100%);
+    background-size: cover;
+    width: auto;
+    height: 450px;
+    margin: 0;
+
+    --clip-length: 3vw;
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--clip-length)) 0,
+      100% var(--clip-length),
+      100% 100%,
+      var(--clip-length) 100%,
+      0 calc(100% - var(--clip-length))
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      --clip-length: 45px;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 24px;
+      line-height: 34px;
+      font-weight: 700;
+      max-width: 800px;
+      margin-bottom: 60px;
+
+      @media (max-width: 768px) {
+        padding: 0 40px;
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+
+    .subscribe-input-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .subscribe-input {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        input {
+          height: 42px;
+          background-color: rgba(255, 255, 255, 0.2);
+          border: 3px solid #fff;
+          width: 360px;
+          max-width: 360px;
+          border-radius: 0 0 0 15px;
+          color: #000;
+          padding: 0 25px;
+          font-size: 16px;
+          font-weight: 500;
+          outline: 0;
+
+          &::placeholder {
+            color: #000;
+          }
+
+          @media (max-width: 480px) {
+            width: 100%;
+            max-width: 195px;
+          }
+        }
+
+        .raised-button {
+          color: #000;
+          font-size: 16px;
+          margin-left: -12px;
+          margin-bottom: -4px;
+          white-space: nowrap;
+        }
+      }
+
+      .privacy-policy {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 0 0 40px;
+
+        span {
+          margin-left: 6px;
+          color: #c90094;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .team {
+    margin: 140px 0 100px;
+
+    @media (max-width: 768px) {
+      margin: 70px 0 50px;
+    }
+
+    h2 {
+      font-family: "Teko";
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 700;
+      color: #000;
+      width: max-content;
+      margin: 0 auto;
+
+      &.strikethrough {
+        position: relative;
+        z-index: 1;
+
+        &:before {
+          position: absolute;
+          content: "";
+          top: 22px;
+          left: -8px;
+          height: 17px;
+          width: calc(100% + 20px);
+          background-color: #00ffff;
+          z-index: -1;
+        }
+      }
+    }
+
+    .team-members {
+      margin: 50px auto;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      row-gap: 50px;
+      column-gap: 5px;
+
+      @media (max-width: 768px) {
+        margin: 50px auto;
+      }
+
+      .member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          height: 200px;
+          background-color: #eee;
+
+          --clip-length: 20px;
+          clip-path: polygon(
+            0 0,
+            calc(100% - var(--clip-length)) 0,
+            100% var(--clip-length),
+            100% 100%,
+            var(--clip-length) 100%,
+            0 calc(100% - var(--clip-length))
+          );
+        }
+
+        h4 {
+          margin: 0;
+          margin-top: 15px;
+          color: #000;
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        h5 {
+          margin: 0;
+          color: #000;
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .icons {
+          margin-top: 10px;
+
+          span {
+            margin-right: 6px;
+            font-size: 18px;
+            color: #00ffff;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 50px 20px;
+    border-top: 1px solid #00ffff;
+
+    @media (max-width: 768px) {
+      gap: 35px;
+      column-gap: 50px;
+    }
+
+    @media (max-width: 480px) {
+      gap: 25px;
+      column-gap: 40px;
+    }
+
+    .policy {
+      p {
+        margin: 0;
+        color: #000;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: left;
+      }
+    }
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        span {
+          margin-right: 30px;
+          font-size: 20px;
+          color: #000;
+        }
+      }
+    }
+  }
+}

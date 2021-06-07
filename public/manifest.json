@@ -1,0 +1,8 @@
+{
+  "name": "DApp Starter",
+  "short_name": "DApp Starter",
+  "display": "standalone",
+  "start_url": "./",
+  "theme_color": "#00ffff",
+  "background_color": "#ffffff"
+}
